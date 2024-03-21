@@ -24,9 +24,9 @@ struct Aluno *criaLista(int numAlunos){
 
 void adicionarAluno(struct Aluno **lista, struct Aluno aluno)
 {
-    strcpy(lista[ultimaPosLivre]->nome, aluno.nome);
-    lista[ultimaPosLivre]->idade = aluno.idade;
-    lista[ultimaPosLivre]->nota = aluno.nota;
+    strcpy((*lista)[ultimaPosLivre].nome, aluno.nome);
+    (*lista)[ultimaPosLivre].idade = aluno.idade;
+    (*lista)[ultimaPosLivre].nota = aluno.nota;
 
     ultimaPosLivre++;
 }
