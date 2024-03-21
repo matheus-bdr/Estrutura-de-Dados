@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int caractere;
+    FILE *arquivo = fopen("exemplo.txt", "r");
+    
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+    printf("Conteudo do arquivo:\n");
+    
+    while (1) {
+        caractere = fgetc(arquivo);
+        if(feof(arquivo)){
+            break;
+        }
+        printf("%c", caractere);
+    }
+    
+    fclose(arquivo);
+    return 0;
+}
